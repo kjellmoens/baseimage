@@ -1,4 +1,4 @@
-ARG DOWNLOAD_URI=https://github.com/bell-sw/Liberica/releases/download/11.0.8+10/bellsoft-jre11.0.8+10-linux-amd64.tar.gz
+ARG DOWNLOAD_URI=https://github.com/bell-sw/Liberica/releases/download/11.0.8+10/bellsoft-jre11.0.8+10-linux-aarch4.tar.gz
 ARG SHA256=b4cb31162ff6d7926dd09e21551fa745fa3ae1758c25148b48dadcf78ab0c24c
 
 # Download and verify file
@@ -15,8 +15,8 @@ RUN curl -L \
     $DOWNLOAD_URI \
     > download.tar.gz
 
-ARG SHA256
-RUN echo "${SHA256} download.tar.gz" | sha256sum -c - 2>&1
+#ARG SHA256
+#RUN echo "${SHA256} download.tar.gz" | sha256sum -c - 2>&1
 
 # Install File
 FROM ubuntu:bionic
